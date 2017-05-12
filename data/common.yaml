@@ -1,2 +1,24 @@
 ---
-# simp_choria::parameter_name: 'value'
+lookup_options:
+  simp_choria::server::mco_server_config:
+    merge: deep
+  simp_choria::server::mco_client_config:
+    merge: deep
+  simp_choria::nats::optional_params:
+    merge: deep
+
+simp_choria::server::nats_client_port: 4222
+
+simp_choria::server::mco_server_config:
+  plugin.choria.ssldir: /var/lib/choria
+
+simp_choria::server::mco_client_config:
+  plugin.choria.ssldir: ~/.choria
+
+simp_choria::nats::user: nats
+simp_choria::nats::group: nats
+simp_choria::nats::client_port: 4222
+simp_choria::nats::cluster_port: 4223
+simp_choria::nats::debug: false
+simp_choria::nats::trace: false
+simp_choria::nats::optional_params: {}

@@ -1,0 +1,12 @@
+---
+fixtures:
+  repositories:
+    nats:
+      repo: 'https://github.com/jeefberkey/puppet-nats.git'
+      branch: 'run-as-user'
+    pki: 'https://github.com/simp/pupmod-simp-pki.git'
+    simplib: 'https://github.com/simp/pupmod-simp-simplib.git'
+    stdlib: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
+    systemd: 'https://github.com/simp/puppet-systemd'
+  symlinks:
+    simp_choria: "#{source_dir}"

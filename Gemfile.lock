@@ -6,8 +6,8 @@ GEM
     aws-sdk-v1 (1.67.0)
       json (~> 1.4)
       nokogiri (~> 1)
-    backports (3.7.0)
-    beaker (3.14.0)
+    backports (3.8.0)
+    beaker (3.16.0)
       aws-sdk-v1 (~> 1.57)
       beaker-hiera (~> 0.0)
       beaker-hostgenerator
@@ -120,7 +120,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (1.43.0)
+    fog-core (1.44.1)
       builder
       excon (~> 0.49)
       formatador (~> 0.2)
@@ -159,7 +159,7 @@ GEM
     fog-profitbricks (3.0.0)
       fog-core (~> 1.42)
       fog-json (~> 1.0)
-    fog-rackspace (0.1.4)
+    fog-rackspace (0.1.5)
       fog-core (>= 1.35)
       fog-json (>= 1.0)
       fog-xml (>= 0.1)
@@ -193,7 +193,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (1.9.1)
+    fog-vsphere (1.9.2)
       fog-core
       rbvmomi (~> 1.9)
     fog-xenserver (0.3.0)
@@ -206,7 +206,7 @@ GEM
     gettext (3.2.2)
       locale (>= 2.0.5)
       text (>= 1.3.0)
-    gettext-setup (0.21)
+    gettext-setup (0.24)
       fast_gettext (~> 1.1.0)
       gettext (>= 3.0.2)
       locale
@@ -272,7 +272,7 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
-    lumberjack (1.0.11)
+    lumberjack (1.0.12)
     memoist (0.15.0)
     metaclass (0.0.4)
     metadata-json-lint (1.1.0)
@@ -283,7 +283,7 @@ GEM
     mime-types (2.99.3)
     mini_portile2 (2.1.0)
     minitar (0.5.4)
-    minitest (5.10.1)
+    minitest (5.10.2)
     mocha (1.2.1)
       metaclass (~> 0.0.1)
     multi_json (1.12.1)
@@ -296,7 +296,7 @@ GEM
     net-ssh (4.1.0)
     net-telnet (0.1.1)
     netrc (0.11.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -304,7 +304,7 @@ GEM
     open_uri_redirections (0.2.1)
     os (0.9.6)
     pager (1.0.1)
-    parallel (1.11.1)
+    parallel (1.11.2)
     parallel_tests (2.14.1)
       parallel
     pry (0.10.4)
@@ -330,7 +330,7 @@ GEM
       yard (~> 0.9.5)
     puppet-syntax (2.4.0)
       rake
-    puppet_forge (2.2.3)
+    puppet_forge (2.2.4)
       faraday (~> 0.9.0)
       faraday_middleware (>= 0.9.0, < 0.11.0)
       gettext-setup (~> 0.11)
@@ -357,12 +357,12 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
-    rbvmomi (1.11.0)
+    rbvmomi (1.11.2)
       builder (~> 3.0)
       json (>= 1.8)
       nokogiri (~> 1.5)
       trollop (~> 2.1)
-    representable (3.0.3)
+    representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
@@ -370,32 +370,32 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    retriable (3.0.1)
-    rspec (3.5.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    retriable (3.0.2)
+    rspec (3.6.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
+      rspec-support (~> 3.6.0)
     rspec-its (1.2.0)
       rspec-core (>= 3.0.0)
       rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.5.0)
+    rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
+      rspec-support (~> 3.6.0)
     rspec-puppet (2.5.0)
       rspec
     rspec-puppet-facts (0.12.0)
       facter
       json
-    rspec-support (3.5.0)
+    rspec-support (3.6.0)
     rsync (1.0.9)
     semantic_puppet (0.1.4)
       gettext-setup (>= 0.3)
-    serverspec (2.38.0)
+    serverspec (2.38.1)
       multi_json
       rspec (~> 3.0)
       rspec-its
@@ -407,7 +407,7 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
-    simp-beaker-helpers (1.7.0)
+    simp-beaker-helpers (1.7.1)
       beaker (~> 3.14)
       beaker-puppet_install_helper (~> 0.6)
     simp-rake-helpers (3.5.0)
@@ -435,7 +435,7 @@ GEM
       rspec-puppet-facts (~> 0)
     slop (3.6.0)
     spdx-licenses (1.1.0)
-    specinfra (2.67.8)
+    specinfra (2.67.9)
       net-scp
       net-ssh (>= 2.7, < 5.0)
       net-telnet
@@ -461,10 +461,10 @@ GEM
     uber (0.1.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.3)
+    unf_ext (0.0.7.4)
     websocket (1.2.4)
     xml-simple (1.1.5)
-    yard (0.9.8)
+    yard (0.9.9)
 
 PLATFORMS
   ruby
@@ -488,7 +488,7 @@ DEPENDENCIES
   rspec
   rspec-puppet
   simp-beaker-helpers (~> 1.7)
-  simp-rake-helpers (~> 3.0)
+  simp-rake-helpers (~> 3.5)
   simp-rspec-puppet-facts (~> 1.3)
   travis
   travis-lint
