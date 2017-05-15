@@ -47,7 +47,6 @@ class simp_choria::nats (
     'user'         => $user,
     'group'        => $group,
     'client_port'  => String($client_port),
-    'cluster_port' => String($cluster_port),
     'debug'        => $debug,
     'trace'        => $trace,
   }

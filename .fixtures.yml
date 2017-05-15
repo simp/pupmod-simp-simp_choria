@@ -1,12 +1,23 @@
 ---
 fixtures:
+  # The forge fixtures are here until I get the rake task for generating the module finished
+  forge_modules:
+    mcollective_choria: choria/mcollective_choria
+    mcollective_agent_puppet: choria/mcollective_agent_puppet
+    mcollective_agent_service: choria/mcollective_agent_service
+    mcollective_agent_package: choria/mcollective_agent_package
+    mcollective_util_actionpolicy: choria/mcollective_util_actionpolicy
+    mcollective_agent_filemgr: choria/mcollective_agent_filemgr
   repositories:
+    inifile: https://github.com/simp/puppetlabs-inifile.git
+    iptables: https://github.com/simp/pupmod-simp-iptables.git
+    mcollective: https://github.com/simp/puppet-mcollective.git
     nats:
-      repo: 'https://github.com/jeefberkey/puppet-nats.git'
-      branch: 'run-as-user'
-    pki: 'https://github.com/simp/pupmod-simp-pki.git'
-    simplib: 'https://github.com/simp/pupmod-simp-simplib.git'
-    stdlib: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
-    systemd: 'https://github.com/simp/puppet-systemd'
+      repo: https://github.com/jeefberkey/puppet-nats.git
+      branch: run-as-user
+    pki: https://github.com/simp/pupmod-simp-pki.git
+    simplib: https://github.com/simp/pupmod-simp-simplib.git
+    stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
+    systemd: https://github.com/simp/puppet-systemd
   symlinks:
     simp_choria: "#{source_dir}"

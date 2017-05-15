@@ -1,24 +1,22 @@
 ---
 lookup_options:
-  simp_choria::server::mco_server_config:
+  simp_choria::mcollective::config:
     merge: deep
-  simp_choria::server::mco_client_config:
-    merge: deep
-  simp_choria::nats::optional_params:
+  simp_choria::nats::params:
     merge: deep
 
-simp_choria::server::nats_client_port: 4222
+simp_choria::is_middleware: false
 
-simp_choria::server::mco_server_config:
-  plugin.choria.ssldir: /var/lib/choria
+simp_choria::mcollective::port: 4222
+simp_choria::mcollective::config:
+  server_config:
+    plugin.choria.ssldir: /var/lib/choria
+  client_config:
+    plugin.choria.ssldir: ~/.choria
 
-simp_choria::server::mco_client_config:
-  plugin.choria.ssldir: ~/.choria
-
+simp_choria::nats::client_port: 4222
 simp_choria::nats::user: nats
 simp_choria::nats::group: nats
-simp_choria::nats::client_port: 4222
-simp_choria::nats::cluster_port: 4223
 simp_choria::nats::debug: false
 simp_choria::nats::trace: false
 simp_choria::nats::optional_params: {}

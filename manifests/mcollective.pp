@@ -35,38 +35,30 @@
 #
 # @author simp
 #
-class simp_choria::server (
-  Simplib::Port $nats_client_port,
-  Hash $mco_server_config,
-  Hash $mco_client_config,
-  Hash $mco_config,
+class simp_choria::mcollective (
+  Simplib::Port $port,
+  Hash $config,
   Variant[Boolean,Enum['simp']] $pki = simplib::lookup('simp_options::pki', { 'default_value' => false }),
   Simplib::Netlist $trusted_nets = simplib::lookup('simp_options::trusted_nets', {'default_value' => ['127.0.0.1/32'] }),
   Boolean $auditing = simplib::lookup('simp_options::auditd', { 'default_value' => false }),
   Boolean $firewall = simplib::lookup('simp_options::firewall', { 'default_value' => false }),
   Boolean $logging = simplib::lookup('simp_options::syslog', { 'default_value' => false }),
 ) {
-  include 'mcollective'
-
-  $_server_config = $mco_server_config
-  $_cert_dir = $_server_config['plugin.choria.ssldir']
-
-  $_client_config = $mco_client_config
 
   class { 'mcollective':
-    server_config => $_server_config,
-    client_config => $_client_config,
-    *             => $mco_config
+    * => $config
   }
 
   if $firewall {
     iptables::listen::tcp_stateful { 'choria middleware':
-      dports       => [$nats_client_port],
+      dports       => [$port],
       trusted_nets => $trusted_nets
     }
   }
 
   if $pki {
+    $_cert_dir = $config['server_config']['plugin.choria.ssldir']
+
     pki::copy { 'choria':
       pki => $pki,
     }
@@ -80,8 +72,8 @@ class simp_choria::server (
         require => File[$_cert_dir];
 
       "${_cert_dir}/certificate_requests":;
-      "${_cert_dir}/choria/certs":;
-      "${_cert_dir}/choria/private_keys":;
+      "${_cert_dir}/certs":;
+      "${_cert_dir}/private_keys":;
     }
     file {
       default:
@@ -93,6 +85,7 @@ class simp_choria::server (
       "${_cert_dir}/certs/${trusted['certname']}.pem":;
       "${_cert_dir}/certificate_requests/${trusted['certname']}.pem":;
       "${_cert_dir}/private_keys/${trusted['certname']}.pem":;
+
       "${_cert_dir}/certs/ca.pem":
         source => '/etc/pki/simp_apps/choria/x509/cacerts/cacerts.pem';
     }
