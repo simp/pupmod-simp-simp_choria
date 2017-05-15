@@ -24,7 +24,7 @@ class simp_choria::nats (
     }
   }
 
-  if $pki {
+  if $pki or $pki == 'simp' {
     pki::copy { 'nats':
       pki   => $pki,
       owner => $user,

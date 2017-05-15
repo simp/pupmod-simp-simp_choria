@@ -56,7 +56,7 @@ class simp_choria::mcollective (
     }
   }
 
-  if $pki {
+  if $pki or $pki == 'simp' {
     $_cert_dir = $config['server_config']['plugin.choria.ssldir']
 
     pki::copy { 'choria':
