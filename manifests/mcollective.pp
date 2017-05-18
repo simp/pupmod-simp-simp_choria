@@ -49,6 +49,12 @@ class simp_choria::mcollective (
     * => $config
   }
 
+  class { 'mcollective_choria':
+    config => {
+      'ssldir' => '/var/lib/choria'
+    }
+  }
+
   if $firewall {
     iptables::listen::tcp_stateful { 'choria middleware':
       dports       => [$port],

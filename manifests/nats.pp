@@ -34,7 +34,7 @@ class simp_choria::nats (
       'cert_file' => $app_pki_cert,
       'key_file'  => $app_pki_key,
       'ca_file'   => $app_pki_ca,
-      'require'   => "Pki::Copy['nats']"
+      'require'   => 'Pki::Copy[nats]'
     }
   }
   else {
@@ -49,6 +49,7 @@ class simp_choria::nats (
     'client_port'  => String($client_port),
     'debug'        => $debug,
     'trace'        => $trace,
+    'before'       => 'Service[mcollective]'
   }
 
   class { 'nats':
