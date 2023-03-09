@@ -1,1 +1,24 @@
-centos-combined-x64.yml
+---
+HOSTS:
+  centos-7:
+    roles:
+    - server
+    - default
+    - master
+    platform: el-7-x86_64
+    box: centos/7
+    hypervisor: "<%= ENV.fetch('BEAKER_HYPERVISOR', 'vagrant') %>"
+    family: centos-cloud/centos-7
+    gce_machine_type: n1-standard-2
+  centos-6:
+    roles:
+    - agent
+    - client
+    platform: el-6-x86_64
+    box: centos/6
+    hypervisor: vagrant
+CONFIG:
+  log_level: verbose
+  type: aio
+  vagrant_memsize: 256
+  puppet_collection: "<%= ENV.fetch('BEAKER_PUPPET_COLLECTION', 'puppet7') %>"
